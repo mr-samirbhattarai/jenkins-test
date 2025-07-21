@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         DOCKER_HOST = "unix:///var/run/docker.sock"
-        DOCKER_IMAGE = "sushilicp/my-web-app"
+        DOCKER_IMAGE = "samirbhattarai/testapp"
         DOCKER_TAG = "${env.BUILD_ID ?: 'latest'}"
         CONTAINER_NAME = "my-web-app-${env.BUILD_NUMBER}"
         GOOGLE_CHAT_WEBHOOK = "https://chat.googleapis.com/v1/spaces/AAQAaQR_SNA/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=RR8wTSfb0py5U2VnLa53xYIJp2yYxVSWV4wP4ovXPxk"
@@ -16,7 +16,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', 
-                url: 'https://github.com/sushilicp/html-demo.git',
+                url: 'https://github.com/mr-samirbhattarai/jenkins-test',
                 credentialsId: ''
             }
         }
